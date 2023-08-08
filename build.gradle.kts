@@ -5,13 +5,17 @@ plugins {
 group = "com.kotpot"
 version = "1.0-SNAPSHOT"
 
+val kotlin_version = "1.9.0"
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
     testImplementation(kotlin("test"))
-    implementation( "com.beust:jcommander:1.71")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlin_version")
+
+
 }
 
 tasks.test {
