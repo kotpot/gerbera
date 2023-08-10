@@ -10,3 +10,5 @@ plugins {
 }
 
 rootProject.name = "kotpot"
+
+include(":html")
