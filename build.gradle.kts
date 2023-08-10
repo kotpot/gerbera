@@ -1,21 +1,23 @@
 plugins {
-    kotlin("jvm") version "1.9.0"
+    alias(libs.plugins.kotlin.jvm)
 }
 
 group = "com.kotpot"
 version = "1.0-SNAPSHOT"
 
-val kotlin_version = "1.9.0"
+allprojects {
 
-repositories {
-    mavenCentral()
+    repositories {
+        google()
+        gradlePluginPortal()
+        mavenCentral()
+    }
+
 }
 
 dependencies {
     testImplementation(kotlin("test"))
-    implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlin_version")
-
-
+    implementation(libs.kotlin.reflect)
 }
 
 tasks.test {
