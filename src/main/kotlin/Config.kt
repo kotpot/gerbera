@@ -1,5 +1,5 @@
 package com.kotpot
-object Defined {
+object Config {
 
     const val PROJECT_NAME = "KotPot"
     const val VERSION = "0.0.1"
