@@ -1,11 +1,17 @@
 [versions]
 kotlin = "1.9.0"
-
+kotlinx-html = "0.9.1"
+ktoml = "0.5.0"
 
 [libraries]
 kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin" }
+kotlinx-html-jvm = { group = "org.jetbrains.kotlinx", name = "kotlinx-html-jvm", version.ref = "kotlinx-html" }
+ktoml-core = { group = "com.akuleshov7", name = "ktoml-core", version.ref = "ktoml" }
+ktoml-source = { group = "com.akuleshov7", name = "ktoml-source", version.ref = "ktoml" }
+ktoml-file = { group = "com.akuleshov7", name = "ktoml-file", version.ref = "ktoml" }
 
 [plugins]
 
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 

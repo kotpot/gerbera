@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     alias(libs.plugins.kotlin.jvm)
 }
@@ -13,6 +15,10 @@ allprojects {
         mavenCentral()
     }
 
+    tasks.withType<KotlinCompile>{
+        kotlinOptions.jvmTarget = "17"
+        kotlinOptions.freeCompilerArgs = listOf("-Xcontext-receivers")
+    }
 }
 
 dependencies {
@@ -25,5 +31,5 @@ tasks.test {
 }
 
 kotlin {
-    jvmToolchain(8)
+    jvmToolchain(17)
 }
