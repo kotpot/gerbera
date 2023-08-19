@@ -1,3 +1,5 @@
-
 [project]
 project_name = "Kotpot"
+
+[theme-kotpot]
+theme-name = "kotpot"

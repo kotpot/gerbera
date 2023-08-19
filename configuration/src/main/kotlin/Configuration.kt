@@ -2,23 +2,20 @@
 
 package com.kotpot.configuration
 
-import com.akuleshov7.ktoml.TomlInputConfig
-import com.akuleshov7.ktoml.file.TomlFileReader
 import com.kotpot.configuration.configs.ProjectConfiguration
+import com.kotpot.configuration.configs.ThemeConfiguration
+import com.kotpot.configuration.loader.ConfigurationLoader
+import com.kotpot.configuration.loader.TomlConfigLoader
 import java.io.File
-
-
-private val tomlReader = TomlFileReader(
-    inputConfig = TomlInputConfig(
-        ignoreUnknownNames = true,
-    )
-)
 
 object Configuration {
 
     private const val FILE_NAME = "kotpot.toml"
 
     lateinit var project: ProjectConfiguration
+        private set
+
+    lateinit var theme: ThemeConfiguration
         private set
 
 
@@ -30,10 +27,10 @@ object Configuration {
      * @author korilin.dev@gmail.com
      */
     fun init(root: String) {
-        val path = File(root, FILE_NAME).absolutePath
-        val serializer = ProjectConfiguration.serializer()
-        val tableName = ProjectConfiguration.TABLE_NAME
-        project = tomlReader.partiallyDecodeFromFile(serializer, path, tableName)
+        val file = File(root, FILE_NAME)
+        val loader = TomlConfigLoader()
+        loader.parse(file)
+        project = loader.loadProjectConfiguration()
+        theme = loader.loadThemeConfiguration()
     }
-
 }
