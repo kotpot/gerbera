@@ -9,7 +9,11 @@ class ProjectConfiguration(init: Map<String, Any>) : JsShareConfiguration(init) 
 
     val author: String? get() = property("author")
 
-    val links get() = property<List<Map<String, String>>>("link").orEmpty()
+    val metas get() = property<List<Map<String, String>>>("metas").orEmpty()
+
+    val links get() = property<List<Map<String, String>>>("links").orEmpty()
+
+    val scripts get() = property<List<Map<String, String>>>("scripts").orEmpty()
 
     companion object {
         internal const val TABLE_NAME = "project"

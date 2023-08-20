@@ -4,7 +4,8 @@ common = "ignore"
 title = "Kotpot"
 author = "korilin"
 links = [
-    { rel="icon", href = "https://korilin.com/favicon.ico" }
+    { rel="icon", href = "https://korilin.com/favicon.ico" },
+    { rel="icon", href = "https://korilin.com/favicon.ico" },
 ]
 
 [theme-kotpot]
