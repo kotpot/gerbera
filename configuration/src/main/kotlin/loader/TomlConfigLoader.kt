@@ -1,14 +1,13 @@
 package com.kotpot.configuration.loader
 
-import com.akuleshov7.ktoml.TomlInputConfig
-import com.akuleshov7.ktoml.parsers.TomlParser
-import com.akuleshov7.ktoml.tree.nodes.TomlFile
-import com.akuleshov7.ktoml.tree.nodes.TomlKeyValuePrimitive
-import com.akuleshov7.ktoml.tree.nodes.TomlTable
+import cc.ekblad.toml.decode
+import cc.ekblad.toml.tomlMapper
 import com.kotpot.configuration.Configuration
 import com.kotpot.configuration.configs.ProjectConfiguration
 import com.kotpot.configuration.configs.ThemeConfiguration
 import java.io.File
+
+typealias TableType = Map<String, Any>
 
 /**
  * Read configurations which in [Configuration] from toml tables.
@@ -26,48 +25,29 @@ class TomlConfigLoader : ConfigurationLoader {
         private const val FILE_NAME = "kotpot.toml"
     }
 
-    private val inputConfig = TomlInputConfig(
-        ignoreUnknownNames = true
-    )
-
-    private val parser = TomlParser(inputConfig)
-
-    private lateinit var ast: TomlFile
+    private val mapper = tomlMapper { }
+    private lateinit var map: Map<String, Any>
 
     /**
      * Parse AST from toml file.
      */
     fun parse(path: String) {
         val file = File(path, FILE_NAME)
-        val content = file.readText()
-        ast = parser.parseString(content)
-    }
-
-    private fun convertTableToMap(table: TomlTable): Map<String, Any> {
-        val map = mutableMapOf<String, Any>()
-        table.children.forEach {
-            if (it is TomlKeyValuePrimitive) {
-                map[it.name] = it.value.content
-            }
-            if (it is TomlTable) {
-                map[it.name] = convertTableToMap(it)
-            }
-        }
-        return map
+        map = mapper.decode(file.toPath())
     }
 
     override fun loadProjectConfiguration(): ProjectConfiguration {
         val tableName = ProjectConfiguration.TABLE_NAME
-        val table = ast.findTableInAstByName(tableName)!!
-        val map = convertTableToMap(table)
-        return ProjectConfiguration(map)
+        @Suppress("UNCHECKED_CAST")
+        return ProjectConfiguration(map[tableName] as Map<String, Any>)
     }
 
     override fun loadThemeConfiguration(): ThemeConfiguration {
         val themeName = Configuration.project.theme
         val tableName = ThemeConfiguration.themeTableBy(themeName)
-        val table = ast.findTableInAstByName(tableName)!!
-        val map = convertTableToMap(table)
-        return ThemeConfiguration(map)
+
+        @Suppress("UNCHECKED_CAST")
+        val value = map[tableName] as? Map<String, Any> ?: mapOf()
+        return ThemeConfiguration(value)
     }
 }

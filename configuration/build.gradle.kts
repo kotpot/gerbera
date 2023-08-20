@@ -12,10 +12,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation(libs.kotlin.reflect)
-    implementation(libs.ktoml.core)
-    implementation(libs.ktoml.source)
-    implementation(libs.ktoml.file)
-
+    implementation(libs.fkoma)
 }
 
 tasks.test {

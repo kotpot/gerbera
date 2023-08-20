@@ -36,6 +36,8 @@ object Configuration {
     fun initOnTest() {
         val file = File(System.getProperty("user.dir"), "../configuration/src/test/kotlin")
         init(file.absolutePath)
+        println(project)
+        println(theme)
     }
 }
 
