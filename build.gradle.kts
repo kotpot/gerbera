@@ -10,12 +10,10 @@ version = "1.0-SNAPSHOT"
 dependencies {
     testImplementation(kotlin("test"))
     implementation(libs.kotlin.reflect)
-
-    // Inner Module
-    implementation(project(":configuration"))
 }
 
 allprojects {
+
 
     repositories {
         google()
@@ -23,7 +21,14 @@ allprojects {
         mavenCentral()
     }
 
-    tasks.withType<KotlinCompile>{
+    dependencies {
+        // Fix implementation not found in this scope.
+        apply(plugin = "kotlin")
+        if (name != "common") implementation(project(":common"))
+        if (name !in arrayOf("configuration", "common")) implementation(project(":configuration"))
+    }
+
+    tasks.withType<KotlinCompile> {
         kotlinOptions.jvmTarget = "17"
         kotlinOptions.freeCompilerArgs = listOf("-Xcontext-receivers")
     }

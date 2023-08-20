@@ -1,8 +1,9 @@
 [project]
-project_name = "Kotpot"
+title = "Kotpot"
+author = "korilin"
 
 [theme-kotpot]
 name = "kotpot"
 [theme-kotpot.ext]
-    num = 123
-    point = { x = 1, y = 2 }
+num = 123
+point = { x = 1, y = 2 }

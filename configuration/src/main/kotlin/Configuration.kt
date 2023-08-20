@@ -4,8 +4,8 @@ package com.kotpot.configuration
 
 import com.kotpot.configuration.configs.ProjectConfiguration
 import com.kotpot.configuration.configs.ThemeConfiguration
-import com.kotpot.configuration.loader.ConfigurationLoader
 import com.kotpot.configuration.loader.TomlConfigLoader
+import org.jetbrains.annotations.TestOnly
 import java.io.File
 
 object Configuration {
@@ -30,4 +30,14 @@ object Configuration {
         project = loader.loadProjectConfiguration()
         theme = loader.loadThemeConfiguration()
     }
+
+
+    @TestOnly
+    fun initOnTest() {
+        val file = File(System.getProperty("user.dir"), "../configuration/src/test/kotlin")
+        init(file.absolutePath)
+    }
 }
+
+val projectConfiguration get() = Configuration.project
+val themeConfiguration get() = Configuration.theme
