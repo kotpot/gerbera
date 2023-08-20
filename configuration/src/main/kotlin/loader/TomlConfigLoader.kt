@@ -10,8 +10,21 @@ import com.kotpot.configuration.configs.ProjectConfiguration
 import com.kotpot.configuration.configs.ThemeConfiguration
 import java.io.File
 
-class TomlConfigLoader: ConfigurationLoader {
+/**
+ * Read configurations which in [Configuration] from toml tables.
+ *
+ * [parse] must be called first when load configurations,
+ * such as [loadProjectConfiguration] and [loadThemeConfiguration],
+ * because toml abstract syntax tree which [Configuration] depend on must be initialized
+ * from toml file named [FILE_NAME].
+ *
+ * @author korilin.dev@gmail.com
+ */
+class TomlConfigLoader : ConfigurationLoader {
 
+    companion object {
+        private const val FILE_NAME = "kotpot.toml"
+    }
 
     private val inputConfig = TomlInputConfig(
         ignoreUnknownNames = true
@@ -21,7 +34,11 @@ class TomlConfigLoader: ConfigurationLoader {
 
     private lateinit var ast: TomlFile
 
-    fun parse(file: File) {
+    /**
+     * Parse AST from toml file.
+     */
+    fun parse(path: String) {
+        val file = File(path, FILE_NAME)
         val content = file.readText()
         ast = parser.parseString(content)
     }

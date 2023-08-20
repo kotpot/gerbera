@@ -10,8 +10,6 @@ import java.io.File
 
 object Configuration {
 
-    private const val FILE_NAME = "kotpot.toml"
-
     lateinit var project: ProjectConfiguration
         private set
 
@@ -27,9 +25,8 @@ object Configuration {
      * @author korilin.dev@gmail.com
      */
     fun init(root: String) {
-        val file = File(root, FILE_NAME)
         val loader = TomlConfigLoader()
-        loader.parse(file)
+        loader.parse(root)
         project = loader.loadProjectConfiguration()
         theme = loader.loadThemeConfiguration()
     }

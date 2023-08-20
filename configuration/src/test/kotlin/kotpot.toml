@@ -2,4 +2,7 @@
 project_name = "Kotpot"
 
 [theme-kotpot]
-theme-name = "kotpot"
+name = "kotpot"
+[theme-kotpot.ext]
+    num = 123
+    point = { x = 1, y = 2 }
