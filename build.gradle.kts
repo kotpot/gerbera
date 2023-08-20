@@ -7,6 +7,14 @@ plugins {
 group = "com.kotpot"
 version = "1.0-SNAPSHOT"
 
+dependencies {
+    testImplementation(kotlin("test"))
+    implementation(libs.kotlin.reflect)
+
+    // Inner Module
+    implementation(project(":configuration"))
+}
+
 allprojects {
 
     repositories {
@@ -19,11 +27,6 @@ allprojects {
         kotlinOptions.jvmTarget = "17"
         kotlinOptions.freeCompilerArgs = listOf("-Xcontext-receivers")
     }
-}
-
-dependencies {
-    testImplementation(kotlin("test"))
-    implementation(libs.kotlin.reflect)
 }
 
 tasks.test {

@@ -7,10 +7,12 @@ import com.kotpot.command.parser.BuildParser
 import com.kotpot.command.parser.InitParser
 import com.kotpot.command.parser.ParamsParser
 import com.kotpot.command.parser.ServeParser
+import com.kotpot.configuration.Configuration
 import com.kotpot.executor.BuildExecutor
 import com.kotpot.executor.InitExecutor
 import com.kotpot.executor.ServeExecutor
 import java.lang.IllegalArgumentException
+import java.util.logging.Logger
 
 /**
  * Command execute flow combination.
@@ -21,17 +23,17 @@ import java.lang.IllegalArgumentException
  * @author korilin.dev@gmail.com
  */
 class CommandCombination<Params : ExecuteParams, Parser : ParamsParser<Params>, Executor : CommandExecutor<Params>>
-
+// Create by CommandCombination.get mapping.
 private constructor(private val parser: Parser,private val executor: Executor) {
 
-    fun execute(args: Array<out String>) {
+    fun prepareExecutor(args: Array<out String>): () -> Unit {
         val params = parser.parse(args)
-        executor.execute(params)
+        return { executor.execute(params) }
     }
 
     companion object {
 
-        fun get(main: String) = when (main) {
+        operator fun get(main: String) = when (main) {
             MainCommands.INIT -> CommandCombination(InitParser, InitExecutor)
             MainCommands.BUILD -> CommandCombination(BuildParser, BuildExecutor)
             MainCommands.SERVE -> CommandCombination(ServeParser, ServeExecutor)

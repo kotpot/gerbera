@@ -11,5 +11,6 @@ plugins {
 
 rootProject.name = "kotpot"
 
+include(":common")
 include(":html")
 include(":configuration")

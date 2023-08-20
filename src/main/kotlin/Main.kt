@@ -1,18 +1,27 @@
 package com.kotpot
 
+import com.kotpot.configuration.Configuration
+
 fun main(vararg args: String) {
-    execute(args)
+    prepareExecutor(args)
 }
 
 
-private fun execute(args: Array<out String>) {
+private fun prepareExecutor(args: Array<out String>) {
 
     require(args.isNotEmpty()) {
         ErrorMessage.EMPTY_ARGUMENTS
     }
 
-    val combination = CommandCombination.get(args[0])
+    // parse command args
+    val combination = CommandCombination[args[0]]
+    val runner = combination.prepareExecutor(args)
 
-    combination.execute(args)
+    // init configuration
+    val curRoot = System.getProperty("user.dir")
+    Configuration.init(curRoot)
 
+    runner.invoke()
+
+    
 }
