@@ -13,6 +13,7 @@ dependencies {
     testImplementation(kotlin("test"))
     implementation(libs.kotlin.reflect)
     implementation(libs.fkoma)
+    api(project(":common"))
 }
 
 tasks.test {
