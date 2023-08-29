@@ -11,23 +11,23 @@ fun FlowOrMetaDataOrPhrasingContent.tag(name: String, content: String): Unit = H
 
 context(FlowOrMetaDataOrPhrasingContent)
 @HtmlTagMarker
-fun Map<String, String>.toHtmlLink() = link {
-    get("href")?.let { href = it }
-    get("hrefLang")?.let { hrefLang = it }
-    get("rel")?.let { rel = it }
-    get("media")?.let { media = it }
-    get("type")?.let { type = it }
-    get("sizes")?.let { sizes = it }
-    get("integrity")?.let { integrity = it }
+fun Map<String, Any>.toHtmlLink() = link {
+    getString("href")?.let { href = it }
+    getString("hrefLang")?.let { hrefLang = it }
+    getString("rel")?.let { rel = it }
+    getString("media")?.let { media = it }
+    getString("type")?.let { type = it }
+    getString("sizes")?.let { sizes = it }
+    getString("integrity")?.let { integrity = it }
 }
 
 context(FlowOrMetaDataOrPhrasingContent)
 @HtmlTagMarker
-fun Map<String, String>.toHtmlMeta() = meta {
-    get("httpEquiv")?.let { httpEquiv = it }
-    get("name")?.let { name = it }
-    get("content")?.let { content = it }
-    get("charset")?.let { charset = it }
+fun Map<String, Any>.toHtmlMeta() = meta {
+    getString("httpEquiv")?.let { httpEquiv = it }
+    getString("name")?.let { name = it }
+    getString("content")?.let { content = it }
+    getString("charset")?.let { charset = it }
 }
 
 context(FlowOrMetaDataOrPhrasingContent)

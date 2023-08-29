@@ -2,6 +2,9 @@
 
 package com.kotpot.configuration
 
+import com.kotpot.common.curRoot
+import com.kotpot.common.curRootOnModuleTest
+import com.kotpot.common.testResourceDir
 import com.kotpot.configuration.configs.ProjectConfiguration
 import com.kotpot.configuration.configs.ThemeConfiguration
 import com.kotpot.configuration.loader.TomlConfigLoader
@@ -33,8 +36,16 @@ object Configuration {
 
 
     @TestOnly
-    fun initOnTest() {
-        val file = File(System.getProperty("user.dir"), "../configuration/src/test/kotlin")
+    fun initWhenModelTest() {
+        val file = File(curRootOnModuleTest, testResourceDir)
+        init(file.absolutePath)
+        println(project)
+        println(theme)
+    }
+
+    @TestOnly
+    fun initWhenProjectTest() {
+        val file = File(curRoot, testResourceDir)
         init(file.absolutePath)
         println(project)
         println(theme)

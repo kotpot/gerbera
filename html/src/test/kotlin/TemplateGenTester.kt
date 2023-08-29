@@ -6,7 +6,7 @@ class TemplateGenTester {
 
     @Test
     fun genHomeBody() {
-        Configuration.initOnTest()
+        Configuration.initWhenModelTest()
         val body = HomeHeader()
         println(body)
     }

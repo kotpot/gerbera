@@ -24,7 +24,7 @@ import java.util.logging.Logger
  */
 class CommandCombination<Params : ExecuteParams, Parser : ParamsParser<Params>, Executor : CommandExecutor<Params>>
 // Create by CommandCombination.get mapping.
-private constructor(private val parser: Parser,private val executor: Executor) {
+private constructor(private val parser: Parser, private val executor: Executor) {
 
     fun prepareExecutor(args: Array<out String>): () -> Unit {
         val params = parser.parse(args)
@@ -32,11 +32,12 @@ private constructor(private val parser: Parser,private val executor: Executor) {
     }
 
     companion object {
+        private infix fun <Params : ExecuteParams> ParamsParser<Params>.combine(executor: CommandExecutor<Params>) = CommandCombination(this, executor)
 
         operator fun get(main: String) = when (main) {
-            MainCommands.INIT -> CommandCombination(InitParser, InitExecutor)
-            MainCommands.BUILD -> CommandCombination(BuildParser, BuildExecutor)
-            MainCommands.SERVE -> CommandCombination(ServeParser, ServeExecutor)
+            MainCommands.INIT -> InitParser combine InitExecutor
+            MainCommands.BUILD -> BuildParser combine BuildExecutor
+            MainCommands.SERVE -> ServeParser combine ServeExecutor
             else -> throw IllegalArgumentException("Illegal command argument")
         }
     }
