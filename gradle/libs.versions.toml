@@ -3,10 +3,12 @@ kotlin = "1.9.0"
 kotlinx-html = "0.9.1"
 fkoma = "1.2.0"
 intellij-markdown = "0.5.0"
+kotlinx-coroutines = "1.7.3"
 
 [libraries]
 kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin" }
 kotlinx-html-jvm = { group = "org.jetbrains.kotlinx", name = "kotlinx-html-jvm", version.ref = "kotlinx-html" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 intellij-markdown = { group = "org.jetbrains", name = "markdown", version.ref = "intellij-markdown" }
 fkoma = { group = "cc.ekblad", name = "4koma", version.ref = "fkoma" }
 

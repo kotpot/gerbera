@@ -8,6 +8,10 @@ repositories {
     mavenCentral()
 }
 
+dependencies{
+    api(libs.kotlinx.coroutines.core)
+}
+
 tasks.test {
     useJUnitPlatform()
 }
