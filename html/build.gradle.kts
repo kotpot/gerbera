@@ -11,6 +11,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation(libs.kotlin.reflect)
+    implementation(libs.fkoma)
     implementation(libs.kotlinx.html.jvm)
     implementation(libs.intellij.markdown)
 }

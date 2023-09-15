@@ -7,7 +7,6 @@ import com.kotpot.configuration.configs.ProjectConfiguration
 import com.kotpot.configuration.configs.ThemeConfiguration
 import java.io.File
 
-typealias TableType = Map<String, Any>
 
 /**
  * Read configurations which in [Configuration] from toml tables.

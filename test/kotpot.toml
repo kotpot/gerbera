@@ -10,6 +10,7 @@ links = [
 
 [theme-kotpot]
 name = "kotpot"
+
 [theme-kotpot.ext]
 num = 123
 point = { x = 1, y = 2 }

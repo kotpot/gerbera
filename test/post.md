@@ -1,6 +1,8 @@
-- title: Title
-- desc: Desc
-- tags: ["Kotlin", "Html"]
++++
+title = "Kotpot"
+date = 2021-05-02
+tags = ["Kotlin", "Html"]
++++
 
 # kotpot
 A blog building framework powered by Kotlin.
