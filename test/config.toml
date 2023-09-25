@@ -1,15 +1,15 @@
 common = "ignore"
 
 [project]
-title = "Kotpot"
-author = "korilin"
+title = "Title"
+author = "Author"
 links = [
     { rel="icon", href = "https://korilin.com/favicon.ico" },
     { rel="icon", href = "https://korilin.com/favicon.ico" },
 ]
 
 [theme-kotpot]
-name = "kotpot"
+name = "Name"
 
 [theme-kotpot.ext]
 num = 123

@@ -1,11 +1,12 @@
-import com.kotpot.common.curRootOnModuleTest
-import com.kotpot.common.testResourceDir
+
 import com.kotpot.html.markdown.MarkdownConstitute
 import org.junit.jupiter.api.Test
 import java.io.File
 
 class MarkdownGenTester {
 
+    private val curRootOnModuleTest: String = System.getProperty("user.dir") + "/.."
+    private val testResourceDir: String = "test"
 
     @Test
     fun genCommonMd() {

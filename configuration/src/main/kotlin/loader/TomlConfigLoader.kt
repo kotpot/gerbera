@@ -2,6 +2,7 @@ package com.kotpot.configuration.loader
 
 import cc.ekblad.toml.decode
 import cc.ekblad.toml.tomlMapper
+import com.kotpot.common.PROJECT_CONFIGURATION_FILE_NAME
 import com.kotpot.configuration.Configuration
 import com.kotpot.configuration.configs.ProjectConfiguration
 import com.kotpot.configuration.configs.ThemeConfiguration
@@ -21,7 +22,7 @@ import java.io.File
 class TomlConfigLoader : ConfigurationLoader {
 
     companion object {
-        private const val FILE_NAME = "kotpot.toml"
+        private const val FILE_NAME = "$PROJECT_CONFIGURATION_FILE_NAME.toml"
     }
 
     private val mapper = tomlMapper { }

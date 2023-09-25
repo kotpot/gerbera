@@ -2,14 +2,9 @@
 
 package com.kotpot.configuration
 
-import com.kotpot.common.curRoot
-import com.kotpot.common.curRootOnModuleTest
-import com.kotpot.common.testResourceDir
 import com.kotpot.configuration.configs.ProjectConfiguration
 import com.kotpot.configuration.configs.ThemeConfiguration
 import com.kotpot.configuration.loader.TomlConfigLoader
-import org.jetbrains.annotations.TestOnly
-import java.io.File
 
 object Configuration {
 
@@ -23,7 +18,7 @@ object Configuration {
     /**
      * Block to read configuration files.
      *
-     * @param root The properties file root dir path. It should be path that only doesn't contain [FILE_NAME].
+     * @param root The properties file root dir path. It should be path that only doesn't contain file name.
      *
      * @author korilin.dev@gmail.com
      */
@@ -32,23 +27,6 @@ object Configuration {
         loader.parse(root)
         project = loader.loadProjectConfiguration()
         theme = loader.loadThemeConfiguration()
-    }
-
-
-    @TestOnly
-    fun initWhenModelTest() {
-        val file = File(curRootOnModuleTest, testResourceDir)
-        init(file.absolutePath)
-        println(project)
-        println(theme)
-    }
-
-    @TestOnly
-    fun initWhenProjectTest() {
-        val file = File(curRoot, testResourceDir)
-        init(file.absolutePath)
-        println(project)
-        println(theme)
     }
 }
 
