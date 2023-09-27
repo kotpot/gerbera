@@ -11,6 +11,8 @@ plugins {
 
 rootProject.name = "kotpot"
 
-include(":common")
-include(":html")
-include(":configuration")
+include(":gerbera-common")
+include(":gerbera-commands")
+include(":gerbera-html")
+include(":gerbera-configuration")
+include(":gerbera-main")
