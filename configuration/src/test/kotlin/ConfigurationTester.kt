@@ -10,8 +10,8 @@ class ConfigurationTester {
     @Test
     fun read() {
         val file = File(curRootOnModuleTest, testResourceDir)
-        Configuration.init(file.absolutePath)
-        println(Configuration.project)
-        println(Configuration.theme)
+        val config = Configuration.init(file.absolutePath)
+        println(config.project)
+        println(config.theme)
     }
 }

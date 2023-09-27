@@ -2,7 +2,6 @@
 
 package com.kotpot.html.templates
 
-import com.kotpot.configuration.projectConfiguration
 import com.kotpot.html.tag
 import com.kotpot.html.toHtmlLink
 import com.kotpot.html.toHtmlMeta
@@ -11,21 +10,27 @@ import kotlinx.html.*
 import kotlinx.html.stream.createHTML
 
 
-fun HomeHeader() = createHTML().header {
+fun HomeHeader(
+    title: String = "",
+    author: String? = null,
+    metas: List<Map<String, Any>> = emptyList(),
+    links: List<Map<String, Any>> = emptyList(),
+    scripts: List<Map<String, Any>> = emptyList(),
+) = createHTML().header {
 
-    tag("title", projectConfiguration.title.orEmpty())
+    tag("title", title.orEmpty())
 
-    meta("author", projectConfiguration.author)
+    meta("author", author)
 
-    for (meta in projectConfiguration.metas) {
+    for (meta in metas) {
         meta.toHtmlMeta()
     }
 
-    for (link in projectConfiguration.links) {
+    for (link in links) {
         link.toHtmlLink()
     }
 
-    for (script in projectConfiguration.scripts) {
+    for (script in scripts) {
         script.toHtmlScript()
     }
 }

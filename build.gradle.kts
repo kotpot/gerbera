@@ -28,7 +28,7 @@ allprojects {
     dependencies {
         // Fix implementation not found in this scope.
         apply(plugin = "kotlin")
-        if (name !in arrayOf("configuration", "common")) implementation(project(":configuration"))
+        if (name != "common") implementation(project(":common"))
     }
 
     tasks.withType<KotlinCompile> {
