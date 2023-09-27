@@ -1,15 +1,18 @@
 package org.kotpot.gerbera.process
 
 
-class ProcessRunner constructor(init: Builder.() -> Unit) {
+sealed class Process {
+    abstract val block: suspend () -> Unit
+    abstract val next: ProcessSwitcher
+}
 
-    class Builder {
-        var block: suspend () -> Unit = {}
-        var next: ProcessSwitcher = ProcessSwitcher.NEXT
+class ProcessBuilder {
+
+
+    private class ProcessImpl : Process() {
+        override var block: suspend () -> Unit = {}
+        override var next: ProcessSwitcher = ProcessSwitcher.NEXT
     }
 
-    init {
-        val builder = Builder()
-        builder.init()
-    }
+    fun build(): Process = this
 }
