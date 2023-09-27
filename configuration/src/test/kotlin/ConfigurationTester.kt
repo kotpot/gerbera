@@ -1,4 +1,4 @@
-import com.kotpot.configuration.Configuration
+import org.kotpot.gerbera.configuration.Configuration
 import java.io.File
 import kotlin.test.Test
 

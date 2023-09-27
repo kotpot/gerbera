@@ -1,4 +1,4 @@
-package com.kotpot
+package org.kotpot.gerbera
 
 object ErrorMessage {
 

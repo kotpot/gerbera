@@ -1,4 +1,4 @@
-package com.kotpot.common
+package org.kotpot.gerbera.common
 val curRoot: String get() = System.getProperty("user.dir")
 
 

@@ -1,3 +1,3 @@
-package com.kotpot.command.params
+package org.kotpot.gerbera.command.params
 
 sealed class ExecuteParams

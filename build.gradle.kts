@@ -4,12 +4,13 @@ plugins {
     alias(libs.plugins.kotlin.jvm)
 }
 
-group = "com.kotpot"
+group = "org.kotpot.gerbera"
 version = "1.0-SNAPSHOT"
 
 dependencies {
     testImplementation(kotlin("test"))
     implementation(libs.kotlin.reflect)
+    implementation(project(":configuration"))
 }
 
 allprojects {

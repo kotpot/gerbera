@@ -1,3 +1,3 @@
-package com.kotpot.html
+package org.kotpot.gerbera.html
 
 

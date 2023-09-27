@@ -1,8 +1,8 @@
-package com.kotpot.command.parser
+package org.kotpot.gerbera.command.parser
 
-import com.kotpot.Config
-import com.kotpot.command.MainCommands
-import com.kotpot.command.params.InitParams
+import org.kotpot.gerbera.Config
+import org.kotpot.gerbera.command.MainCommands
+import org.kotpot.gerbera.command.params.InitParams
 
 data object InitParser : ParamsParser<InitParams>() {
 

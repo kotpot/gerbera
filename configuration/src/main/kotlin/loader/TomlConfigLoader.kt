@@ -1,11 +1,11 @@
-package com.kotpot.configuration.loader
+package org.kotpot.gerbera.configuration.loader
 
 import cc.ekblad.toml.decode
 import cc.ekblad.toml.tomlMapper
-import com.kotpot.common.PROJECT_CONFIGURATION_FILE_NAME
-import com.kotpot.configuration.Configuration
-import com.kotpot.configuration.configs.ProjectConfiguration
-import com.kotpot.configuration.configs.ThemeConfiguration
+import org.kotpot.gerbera.common.PROJECT_CONFIGURATION_FILE_NAME
+import org.kotpot.gerbera.configuration.Configuration
+import org.kotpot.gerbera.configuration.configs.ProjectConfiguration
+import org.kotpot.gerbera.configuration.configs.ThemeConfiguration
 import java.io.File
 
 
@@ -43,11 +43,8 @@ class TomlConfigLoader : ConfigurationLoader {
     }
 
     override fun loadThemeConfiguration(): ThemeConfiguration {
-        val themeName = Configuration.project.theme
-        val tableName = ThemeConfiguration.themeTableBy(themeName)
-
+        val tableName = ThemeConfiguration.TABLE_NAME
         @Suppress("UNCHECKED_CAST")
-        val value = map[tableName] as? Map<String, Any> ?: mapOf()
-        return ThemeConfiguration(value)
+        return ThemeConfiguration(map[tableName] as Map<String, Any>)
     }
 }

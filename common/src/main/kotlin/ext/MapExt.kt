@@ -1,4 +1,4 @@
-package com.kotpot.common.ext
+package org.kotpot.gerbera.common.ext
 
 
 fun Map<String, Any>.getString(key: String) = get(key) as? String

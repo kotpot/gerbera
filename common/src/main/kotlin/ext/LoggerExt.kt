@@ -1,4 +1,4 @@
-package com.kotpot.common.ext
+package org.kotpot.gerbera.common.ext
 
 import java.util.logging.Logger
 

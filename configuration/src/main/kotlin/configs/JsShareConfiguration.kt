@@ -1,4 +1,4 @@
-package com.kotpot.configuration.configs
+package org.kotpot.gerbera.configuration.configs
 
 sealed class JsShareConfiguration(private val init: Map<String, Any>) : Map<String, Any> by init {
 

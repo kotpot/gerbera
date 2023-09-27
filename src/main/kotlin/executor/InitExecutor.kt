@@ -1,6 +1,6 @@
-package com.kotpot.executor
+package org.kotpot.gerbera.executor
 
-import com.kotpot.command.params.InitParams
+import org.kotpot.gerbera.command.params.InitParams
 
  data object InitExecutor : CommandExecutor<InitParams>() {
 

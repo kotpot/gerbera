@@ -1,16 +1,15 @@
-package com.kotpot
+package org.kotpot.gerbera
 
-import com.kotpot.command.MainCommands
-import com.kotpot.executor.CommandExecutor
-import com.kotpot.command.params.ExecuteParams
-import com.kotpot.command.parser.BuildParser
-import com.kotpot.command.parser.InitParser
-import com.kotpot.command.parser.ParamsParser
-import com.kotpot.command.parser.ServeParser
-import com.kotpot.configuration.Configuration
-import com.kotpot.executor.BuildExecutor
-import com.kotpot.executor.InitExecutor
-import com.kotpot.executor.ServeExecutor
+import org.kotpot.gerbera.command.MainCommands
+import org.kotpot.gerbera.executor.CommandExecutor
+import org.kotpot.gerbera.command.params.ExecuteParams
+import org.kotpot.gerbera.command.parser.BuildParser
+import org.kotpot.gerbera.command.parser.InitParser
+import org.kotpot.gerbera.command.parser.ParamsParser
+import org.kotpot.gerbera.command.parser.ServeParser
+import org.kotpot.gerbera.executor.BuildExecutor
+import org.kotpot.gerbera.executor.InitExecutor
+import org.kotpot.gerbera.executor.ServeExecutor
 import java.lang.IllegalArgumentException
 import java.util.logging.Logger
 

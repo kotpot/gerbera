@@ -1,6 +1,6 @@
-package com.kotpot.executor
+package org.kotpot.gerbera.executor
 
-import com.kotpot.command.params.ServeParams
+import org.kotpot.gerbera.command.params.ServeParams
 
 data object ServeExecutor: CommandExecutor<ServeParams>() {
     override fun execute(params: ServeParams) {

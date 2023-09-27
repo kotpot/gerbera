@@ -1,6 +1,6 @@
-package com.kotpot
+package org.kotpot.gerbera
 
-import com.kotpot.configuration.Configuration
+import org.kotpot.gerbera.configuration.Configuration
 
 fun main(vararg args: String) {
     prepareExecutor(args)

@@ -1,10 +1,10 @@
 @file:Suppress("MemberVisibilityCanBePrivate")
 
-package com.kotpot.configuration
+package org.kotpot.gerbera.configuration
 
-import com.kotpot.configuration.configs.ProjectConfiguration
-import com.kotpot.configuration.configs.ThemeConfiguration
-import com.kotpot.configuration.loader.TomlConfigLoader
+import org.kotpot.gerbera.configuration.configs.ProjectConfiguration
+import org.kotpot.gerbera.configuration.configs.ThemeConfiguration
+import org.kotpot.gerbera.configuration.loader.TomlConfigLoader
 
 class Configuration private constructor(
     val project: ProjectConfiguration,

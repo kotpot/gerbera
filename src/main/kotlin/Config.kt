@@ -1,4 +1,4 @@
-package com.kotpot
+package org.kotpot.gerbera
 object Config {
 
     const val PROJECT_NAME = "KotPot"

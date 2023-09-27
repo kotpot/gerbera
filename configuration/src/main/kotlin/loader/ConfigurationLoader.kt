@@ -1,7 +1,7 @@
-package com.kotpot.configuration.loader
+package org.kotpot.gerbera.configuration.loader
 
-import com.kotpot.configuration.configs.ProjectConfiguration
-import com.kotpot.configuration.configs.ThemeConfiguration
+import org.kotpot.gerbera.configuration.configs.ProjectConfiguration
+import org.kotpot.gerbera.configuration.configs.ThemeConfiguration
 
 sealed interface ConfigurationLoader {
 

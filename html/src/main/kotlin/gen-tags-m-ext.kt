@@ -1,7 +1,7 @@
-package com.kotpot.html
+package org.kotpot.gerbera.html
 
-import com.kotpot.common.ext.getBoolean
-import com.kotpot.common.ext.getString
+import org.kotpot.gerbera.common.ext.getBoolean
+import org.kotpot.gerbera.common.ext.getString
 import kotlinx.html.*
 
 @HtmlTagMarker

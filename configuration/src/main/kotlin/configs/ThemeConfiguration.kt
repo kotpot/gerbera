@@ -1,12 +1,11 @@
-package com.kotpot.configuration.configs
+package org.kotpot.gerbera.configuration.configs
 
 class ThemeConfiguration(init: Map<String, Any>) : JsShareConfiguration(init)  {
 
     companion object {
 
-        private const val DEFAULT_THEME = "kotpot"
+        const val TABLE_NAME = "theme"
 
-        fun themeTableBy(theme: String?) = "theme-${theme ?: DEFAULT_THEME}"
     }
 
 }

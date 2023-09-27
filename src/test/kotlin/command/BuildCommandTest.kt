@@ -1,7 +1,7 @@
 package command
 
-import com.kotpot.command.params.BuildParams
-import com.kotpot.command.parser.BuildParser
+import org.kotpot.gerbera.command.params.BuildParams
+import org.kotpot.gerbera.command.parser.BuildParser
 import org.junit.jupiter.api.Test
 
 

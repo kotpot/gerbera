@@ -1,11 +1,11 @@
 @file:Suppress("FunctionName")
 
-package com.kotpot.html.templates
+package org.kotpot.gerbera.html.templates
 
-import com.kotpot.html.tag
-import com.kotpot.html.toHtmlLink
-import com.kotpot.html.toHtmlMeta
-import com.kotpot.html.toHtmlScript
+import org.kotpot.gerbera.html.tag
+import org.kotpot.gerbera.html.toHtmlLink
+import org.kotpot.gerbera.html.toHtmlMeta
+import org.kotpot.gerbera.html.toHtmlScript
 import kotlinx.html.*
 import kotlinx.html.stream.createHTML
 
@@ -18,7 +18,7 @@ fun HomeHeader(
     scripts: List<Map<String, Any>> = emptyList(),
 ) = createHTML().header {
 
-    tag("title", title.orEmpty())
+    tag("title", title)
 
     meta("author", author)
 

@@ -1,4 +1,4 @@
-package com.kotpot.command.params
+package org.kotpot.gerbera.command.params
 
 data class BuildParams(
     var level: Level

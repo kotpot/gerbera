@@ -1,7 +1,7 @@
-package com.kotpot.command.parser
+package org.kotpot.gerbera.command.parser
 
-import com.kotpot.command.MainCommands
-import com.kotpot.command.params.ServeParams
+import org.kotpot.gerbera.command.MainCommands
+import org.kotpot.gerbera.command.params.ServeParams
 
 data object ServeParser : ParamsParser<ServeParams>() {
 

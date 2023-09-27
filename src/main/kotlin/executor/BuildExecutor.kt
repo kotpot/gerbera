@@ -1,6 +1,6 @@
-package com.kotpot.executor
+package org.kotpot.gerbera.executor
 
-import com.kotpot.command.params.BuildParams
+import org.kotpot.gerbera.command.params.BuildParams
 
 data object BuildExecutor : CommandExecutor<BuildParams>() {
     override fun execute(params: BuildParams) {

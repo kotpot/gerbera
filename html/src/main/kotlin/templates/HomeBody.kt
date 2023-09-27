@@ -1,4 +1,4 @@
-package com.kotpot.html.templates
+package org.kotpot.gerbera.html.templates
 
 import kotlinx.html.body
 import kotlinx.html.stream.createHTML

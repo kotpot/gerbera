@@ -1,4 +1,4 @@
-package com.kotpot.command
+package org.kotpot.gerbera.command
 
 object MainCommands {
 

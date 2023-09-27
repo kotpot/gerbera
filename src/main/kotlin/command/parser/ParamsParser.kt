@@ -1,6 +1,6 @@
-package com.kotpot.command.parser
+package org.kotpot.gerbera.command.parser
 
-import com.kotpot.command.params.ExecuteParams
+import org.kotpot.gerbera.command.params.ExecuteParams
 
 sealed class ParamsParser<EP : ExecuteParams> {
 

@@ -1,4 +1,4 @@
-package com.kotpot.html.markdown
+package org.kotpot.gerbera.html.markdown
 
 import cc.ekblad.toml.decode
 import cc.ekblad.toml.tomlMapper

@@ -1,4 +1,4 @@
-package com.kotpot.html.markdown
+package org.kotpot.gerbera.html.markdown
 
 
 enum class FrontMatterType(private val identified: String) {

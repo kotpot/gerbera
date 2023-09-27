@@ -1,4 +1,4 @@
-import com.kotpot.html.templates.HomeHeader
+import org.kotpot.gerbera.html.templates.HomeHeader
 import kotlin.test.Test
 
 class TemplateGenTester {

@@ -1,6 +1,6 @@
-package com.kotpot.executor
+package org.kotpot.gerbera.executor
 
-import com.kotpot.command.params.ExecuteParams
+import org.kotpot.gerbera.command.params.ExecuteParams
 
 sealed class CommandExecutor<EP: ExecuteParams> {
 

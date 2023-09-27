@@ -1,4 +1,4 @@
-package com.kotpot.configuration.configs
+package org.kotpot.gerbera.configuration.configs
 
 
 class ProjectConfiguration(init: Map<String, Any>) : JsShareConfiguration(init) {
