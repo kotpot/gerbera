@@ -9,7 +9,7 @@ plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.5.0"
 }
 
-rootProject.name = "kotpot"
+rootProject.name = "gerbera"
 
 include(":gerbera-common")
 include(":gerbera-commands")
