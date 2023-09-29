@@ -8,9 +8,7 @@ links = [
     { rel="icon", href = "https://korilin.com/favicon.ico" },
 ]
 
-[theme-kotpot]
+[theme]
 name = "Name"
-
-[theme-kotpot.ext]
 num = 123
 point = { x = 1, y = 2 }

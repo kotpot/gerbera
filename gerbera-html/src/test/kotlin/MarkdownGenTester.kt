@@ -5,15 +5,15 @@ import java.io.File
 
 class MarkdownGenTester {
 
-    private val curRootOnModuleTest: String = System.getProperty("user.dir") + "/.."
-    private val testResourceDir: String = "test"
+    private val curRoot: String = System.getProperty("user.dir")
+    private val resourcesDir = "/src/test/resources"
 
     @Test
     fun genCommonMd() {
-        val root = File(curRootOnModuleTest, testResourceDir)
+        val root = File(curRoot, resourcesDir)
         val md = File(root, "post.md")
         val post = MarkdownConstitute.parse(md)
-        println(post.frontMatter)
-        println(post.postContent)
+        check(post.frontMatter.isNotEmpty())
+        check(post.postContent.isNotEmpty())
     }
 }

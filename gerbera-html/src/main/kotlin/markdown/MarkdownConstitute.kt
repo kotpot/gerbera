@@ -8,10 +8,11 @@ import org.intellij.markdown.parser.MarkdownParser
 import java.io.File
 import kotlin.text.StringBuilder
 
-class MarkdownConstitute private constructor(
+data class MarkdownConstitute(
     val frontMatter: Map<String, Any>,
     val postContent: String
 ) {
+
     companion object {
         fun parse(markdown: File): MarkdownConstitute {
             val lines = markdown.readLines()

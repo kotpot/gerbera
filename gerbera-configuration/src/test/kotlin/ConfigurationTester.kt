@@ -4,14 +4,14 @@ import kotlin.test.Test
 
 class ConfigurationTester {
 
-    private val curRootOnModuleTest: String = System.getProperty("user.dir") + "/.."
-    private val testResourceDir: String = "test"
+    private val curRoot: String = System.getProperty("user.dir")
+    private val resourcesDir = "/src/test/resources"
 
     @Test
     fun read() {
-        val file = File(curRootOnModuleTest, testResourceDir)
+        val file = File(curRoot, resourcesDir)
         val config = Configuration.init(file.absolutePath)
-        println(config.project)
-        println(config.theme)
+        check(config.project.isNotEmpty())
+        check(config.theme.isNotEmpty())
     }
 }

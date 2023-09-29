@@ -15,11 +15,13 @@ allprojects {
         mavenCentral()
 
         maven {
+            // for 4koma
             url = uri("https://jitpack.io")
         }
     }
 }
 
+// TODO maybe a better way to keep it simple
 subprojects {
     dependencies {
         // Fix implementation not found in this scope.
@@ -29,11 +31,11 @@ subprojects {
         // Tester
         testImplementation(kotlin("test"))
     }
-}
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "17"
-    kotlinOptions.freeCompilerArgs = listOf("-Xcontext-receivers")
+    tasks.withType<KotlinCompile> {
+        kotlinOptions.jvmTarget = "17"
+        kotlinOptions.freeCompilerArgs = listOf("-Xcontext-receivers")
+    }
 }
 
 tasks.test {
