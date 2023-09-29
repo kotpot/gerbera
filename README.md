@@ -3,7 +3,14 @@ A blog building framework powered by Kotlin.
 
 # TODO
 
-- [ ] JS lib support
-- [ ] Kotlin lib support
-- [ ] Html theme template
-- [ ] Kotlin theme template
+- Config Type
+  - [x] Toml
+  - [ ] Yaml
+
+- Front Matter
+  - [ ] Toml
+  - [ ] Yaml
+
+- Template Support
+  - [x] Thymeleaf
+  - [ ] FreeMarker

@@ -13,6 +13,7 @@ dependencies {
     implementation(libs.fkoma)
     implementation(libs.kotlinx.html.jvm)
     implementation(libs.intellij.markdown)
+    implementation(libs.thymeleaf)
 }
 
 tasks.test {
